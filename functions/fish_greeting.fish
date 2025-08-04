@@ -20,6 +20,6 @@ function fish_greeting
     # and echo $fish_greeting
 
     if functions -q fish_logo
-        fish_logo
+        fish_logo '#f38ba8' '#cba6f7' '#f9e2af' '[' 'O'
     end
 end
