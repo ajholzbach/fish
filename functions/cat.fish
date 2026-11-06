@@ -1,7 +1,7 @@
 function cat --wraps cat
     functions --erase cat
-    if type -q bat
-        alias cat='bat --paging=never --style=plain --color=auto'
+    if command -q bat
+        alias cat='bat --plain'
     end
     cat $argv
 end

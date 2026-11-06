@@ -1,7 +1,7 @@
-function lt --wraps eza
+function lt --wraps 'eza -aT'
     functions --erase lt
-    if type -q eza
-        alias lt='eza -aT --color=always --group-directories-first --icons=always'
+    if command -q eza
+        alias lt='eza -aT --group-directories-first --icons=auto'
     end
     lt $argv
 end

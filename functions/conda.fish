@@ -13,8 +13,11 @@ function conda --wraps conda
             $HOME/miniforge3 $HOME/miniconda3 $HOME/anaconda3 $HOME/mambaforge \
             /opt/miniforge3 /opt/miniconda3 /opt/anaconda3 /opt/conda
 
-        if command -sq brew
-            set -l brew_prefix (brew --prefix ^/dev/null)
+        set -l brew_prefix $HOMEBREW_PREFIX
+        if test -z "$brew_prefix"; and command -sq brew
+            set brew_prefix (brew --prefix 2>/dev/null)
+        end
+        if test -n "$brew_prefix"
             set -a prefixes \
                 $brew_prefix/Caskroom/miniforge/base \
                 $brew_prefix/Caskroom/miniconda/base \

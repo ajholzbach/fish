@@ -1,7 +1,9 @@
-function ll --wraps eza
+function ll --wraps 'eza -l'
     functions --erase ll
-    if type -q eza
-        alias ll='eza -l --color=always --group-directories-first --icons=always'
+    if command -q eza
+        alias ll='eza -l --group-directories-first --icons=auto'
+    else
+        __source_fish_function ll
     end
     ll $argv
 end
