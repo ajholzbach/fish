@@ -1,4 +1,4 @@
-status is-interactive; or return
+status is-interactive; or exit
 
 # fzf --fish costs about 10 ms, so load it on the first key press. Check for
 # fzf only then, because config.fish runs after conf.d and may add it to PATH.
